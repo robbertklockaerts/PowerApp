@@ -273,3 +273,8 @@ HomeScreen As screen:
         Y: =71
         ZIndex: =10
 
+    button2 As button:
+        X: =165
+        Y: =1030
+        Width: =280
+        Height: =70 
