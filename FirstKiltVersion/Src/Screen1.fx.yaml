@@ -1,0 +1,408 @@
+Screen1 As screen:
+
+    Form1 As form:
+        DataSource: =SEC_Car_Rapports
+        DefaultMode: =FormMode.New
+        Height: =986
+        Width: =640
+        Y: =40
+        ZIndex: =1
+
+        CAR_CLEAN_DataCard2 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CAR_CLEAN"
+            Default: =ThisItem.CAR_CLEAN
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="CAR_CLEAN"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue14.Selected
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey16 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue14 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                IsSearchable: =false
+                Items: =Choices([@SEC_Car_Rapports].CAR_CLEAN)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey16.Y + DataCardKey16.Height + 5
+                ZIndex: =2
+
+            ErrorMessage16 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue14.Y + DataCardValue14.Height
+                ZIndex: =3
+
+            StarVisible16 As label:
+                Align: =Align.Center
+                Height: =DataCardKey16.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey16.Y
+                ZIndex: =4
+
+        FIRST_AID_KIT_DataCard1 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FIRST_AID_KIT"
+            Default: =ThisItem.FIRST_AID_KIT
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="FIRST_AID_KIT"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue16.Selected
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey18 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue16 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                IsSearchable: =false
+                Items: =Choices([@SEC_Car_Rapports].FIRST_AID_KIT)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey18.Y + DataCardKey18.Height + 5
+                ZIndex: =2
+
+            ErrorMessage18 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue16.Y + DataCardValue16.Height
+                ZIndex: =3
+
+            StarVisible18 As label:
+                Align: =Align.Center
+                Height: =DataCardKey18.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey18.Y
+                ZIndex: =4
+
+        FLUO_VEST_DataCard1 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="FLUO_VEST"
+            Default: =ThisItem.FLUO_VEST
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="FLUO_VEST"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue17.Selected
+            Width: =640
+            X: =0
+            Y: =2
+            ZIndex: =1
+
+            DataCardKey20 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue17 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                IsSearchable: =false
+                Items: =Choices([@SEC_Car_Rapports].FLUO_VEST)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey20.Y + DataCardKey20.Height + 5
+                ZIndex: =2
+
+            ErrorMessage20 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue17.Y + DataCardValue17.Height
+                ZIndex: =3
+
+            StarVisible20 As label:
+                Align: =Align.Center
+                Height: =DataCardKey20.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey20.Y
+                ZIndex: =4
+
+        GPS_DataCard1 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="GPS"
+            Default: =ThisItem.GPS
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="GPS"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue21.Selected
+            Width: =640
+            X: =0
+            Y: =3
+            ZIndex: =1
+
+            DataCardKey23 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue21 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                IsSearchable: =false
+                Items: =Choices([@SEC_Car_Rapports].GPS)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey23.Y + DataCardKey23.Height + 5
+                ZIndex: =2
+
+            ErrorMessage25 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue21.Y + DataCardValue21.Height
+                ZIndex: =3
+
+            StarVisible25 As label:
+                Align: =Align.Center
+                Height: =DataCardKey23.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey23.Y
+                ZIndex: =4
+
+        DataCard1 As typedDataCard.blankCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="LICENSEPLATE"
+            DisplayMode: =DisplayMode.Edit
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =159
+            Width: =640
+            X: =0
+            Y: =4
+            ZIndex: =1
+
+            Label2 As label:
+                Height: =70
+                Size: =21
+                Text: ="LP test  custom card"
+                Width: =454
+                X: =42
+                Y: =1
+                ZIndex: =1
+
+            ComboBox1 As combobox:
+                DisplayFields: =["LICENSE_NUMBER"]
+                Height: =70
+                IsSearchable: =false
+                Items: =SEC_Car_List
+                SearchFields: =["LICENSE_NUMBER"]
+                SearchItems: =[]
+                Size: =21
+                Width: =575
+                X: =42
+                Y: =71
+                ZIndex: =2
+
+        CLEANESS_RAPPORT_DataCard1 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CLEANESS_RAPPORT"
+            Default: =ThisItem.CLEANESS_RAPPORT
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="CLEANESS_RAPPORT"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =207
+            MaxLength: =DataSourceInfo([@SEC_Car_Rapports], DataSourceInfo.MaxLength, "CLEANESS_RAPPORT")
+            Required: =false
+            Update: =ComboBox2.SelectedItems.
+            Width: =640
+            X: =0
+            Y: =5
+            ZIndex: =1
+
+            DataCardKey26 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: ="Custom Card 2"
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            ErrorMessage26 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =ComboBox2.Y + ComboBox2.Height
+                ZIndex: =3
+
+            StarVisible26 As label:
+                Align: =Align.Center
+                Height: =DataCardKey26.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey26.Y
+                ZIndex: =4
+
+            ComboBox2 As combobox:
+                DisplayFields: =["LICENSE_NUMBER"]
+                Height: =70
+                IsSearchable: =false
+                Items: =SEC_Car_List
+                SearchFields: =["LICENSE_NUMBER"]
+                SearchItems: =[]
+                Size: =21
+                Width: =575
+                X: =35
+                Y: =88
+                ZIndex: =5
+
+    Button1 As button:
+        Height: =70
+        OnSelect: =SubmitForm(Form1);ResetForm(Form1)
+        Size: =24
+        Text: ="Button"
+        Width: =280
+        X: =159
+        Y: =993
+        ZIndex: =2
+

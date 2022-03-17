@@ -1,0 +1,16 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |-
+        =ClearCollect(Colnav,
+        
+            {
+                TextFR: "Home",
+                TextNL: "Home",
+                screen: HomeScreen
+            }
+        );
+        Set(varUser, User().FullName);
+        
+        Set(menuOpen,false);
+        Set(myLanguage,Language());
+

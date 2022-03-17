@@ -1,0 +1,39 @@
+cmpHeader As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    HeaderText: ="Tekst"
+    Height: =80
+    HomeScreen: =App.ActiveScreen
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    RectHeaderMed_2 As rectangle:
+        Fill: =RGBA(37, 51, 108, 1)
+        Height: =88
+        Width: =640
+        ZIndex: =1
+
+    ImgNmbsLogoMed_2 As image:
+        Height: =88
+        Image: ='logo NMBS donkerblauw'
+        OnSelect: =Navigate(cmpHeader.HomeScreen)
+        Width: =88
+        X: =16
+        ZIndex: =2
+
+    LabPageHeader_1 As label:
+        Align: =Align.Center
+        Color: =RGBA(250, 250, 250, 1)
+        Font: =Font.Arial
+        Height: =80
+        Size: =32
+        Text: |-
+            =cmpHeader.HeaderText
+            
+            
+            //If(Or(Language()="fr";Language()="fr-FR");"Médecins du travail";"Arbeidsartsen")
+        Width: =443
+        X: =104
+        ZIndex: =4
+

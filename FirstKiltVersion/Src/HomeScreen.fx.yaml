@@ -1,0 +1,275 @@
+HomeScreen As screen:
+    Fill: =RGBA(239, 244, 249, 1)
+
+    imgNameLogo As image:
+        Height: =150
+        Image: =kiltLogoBgTransp
+        Width: =149
+        X: =16
+        Y: =80
+        ZIndex: =1
+
+    "GalHistory As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        BorderThickness: =4
+        Height: =481
+        Items: |+
+            =SortByColumns(LastN(Filter(SEC_Car_Rapports, 'Créé par'.DisplayName = varUser),5),"STARTTIME",Descending)
+            
+            
+        Layout: =Layout.Vertical
+        TemplatePadding: =16
+        TemplateSize: =473
+        Width: =608
+        X: =16
+        Y: =281
+        ZIndex: =3
+
+        Separator1 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        lblAccompagnist As label:
+            Font: =Font.Arial
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.ACCOMPAGNIST
+            Width: =Parent.Width/2
+            X: =(Parent.Width/2)-30
+            Y: =61
+            ZIndex: =6
+
+        lblSTARTTIME As label:
+            Font: =Font.Arial
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.STARTTIME
+            Width: =Parent.Width/2
+            X: =(Parent.Width/2)-30
+            Y: =121
+            ZIndex: =7
+
+        lblKMSTART As label:
+            Font: =Font.Arial
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.KM_START
+            Width: =Parent.Width/2
+            X: =(Parent.Width/2)-30
+            Y: =241
+            ZIndex: =9
+
+        lblKMRETURN As label:
+            Font: =Font.Arial
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.KM_RETURN
+            Width: =Parent.Width/2
+            X: =(Parent.Width/2)-30
+            Y: =301
+            ZIndex: =10
+
+        icoEdit As icon.Edit:
+            Height: =60
+            Icon: =Icon.Edit
+            OnSelect: |-
+                =ResetForm(FormPersonalinfo);
+                ResetForm(Form2);
+                ResetForm(FormVehicleStart);
+                ResetForm(FormVehicleReturn);
+                Set(
+                    varFormData,
+                    ThisItem
+                );
+                Set(
+                    varFormMode,
+                    FormMode.Edit
+                );
+                Navigate(FormScreenPersonalinfo)
+            Visible: |+
+                =//If(IsToday(ThisItem.STARTTIME), true, false)
+                If(ThisItem.STARTTIME >= DateAdd(Now(),-1) , true, false)
+                
+            Width: =60
+            X: =199
+            Y: =382
+            ZIndex: =11
+
+        icoView As icon.NextArrow:
+            Height: =60
+            Icon: =Icon.NextArrow
+            OnSelect: |-
+                =ResetForm(FormPersonalinfo);
+                ResetForm(Form2);
+                ResetForm(FormVehicleStart);
+                ResetForm(FormVehicleReturn);
+                Set(
+                    varFormData,
+                    ThisItem
+                );
+                Set(
+                    varFormMode,
+                    FormMode.View
+                );
+                Navigate(FormScreenPersonalinfo)
+            Width: =60
+            X: =310
+            Y: =382
+            ZIndex: =12
+
+        lblUser As label:
+            Font: =Font.Arial
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =varUser
+            Width: =Parent.Width/2
+            X: =(Parent.Width/2)-30
+            Y: =1
+            ZIndex: =14
+
+        Label8 As label:
+            Font: =Font.Arial
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: =ThisItem.RETURNTIME
+            Width: =Parent.Width/2
+            X: =(Parent.Width/2)-30
+            Y: =181
+            ZIndex: =15
+
+        Label9 As label:
+            Align: =Align.Right
+            Font: =Font.Arial
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: ="DRIVER"
+            Width: =Parent.Width/2-35
+            X: =
+            Y: =1
+            ZIndex: =16
+
+        Label9_1 As label:
+            Align: =Align.Right
+            Font: =Font.Arial
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: ="ACCOMPAGNIST"
+            Width: =Parent.Width/2-35
+            Y: =61
+            ZIndex: =17
+
+        Label9_2 As label:
+            Align: =Align.Right
+            Font: =Font.Arial
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: ="RETURN TIME"
+            Width: =Parent.Width/2-35
+            X: =
+            Y: =181
+            ZIndex: =18
+
+        Label9_3 As label:
+            Align: =Align.Right
+            Font: =Font.Arial
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: ="START TIME"
+            Width: =Parent.Width/2-35
+            X: =
+            Y: =121
+            ZIndex: =19
+
+        Label9_4 As label:
+            Align: =Align.Right
+            Font: =Font.Arial
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: ="KM ON START"
+            Width: =Parent.Width/2-35
+            X: =
+            Y: =241
+            ZIndex: =20
+
+        Label9_5 As label:
+            Align: =Align.Right
+            Font: =Font.Arial
+            Height: =60
+            OnSelect: =Select(Parent)
+            Size: =20
+            Text: ="KM ON RETURN"
+            Width: =Parent.Width/2-35
+            Y: =302
+            ZIndex: =21
+
+    btnNewForm As button:
+        Color: =RGBA(250, 250, 250, 1)
+        Height: =70
+        OnSelect: |-
+            =ResetForm(FormPersonalinfo);
+            ResetForm(Form2);
+            ResetForm(FormVehicleStart);
+            ResetForm(FormVehicleReturn);
+            Set(
+                varFormData,
+                Defaults(SEC_Car_Rapports)
+            );
+            Set(
+                varFormMode,
+                FormMode.Edit
+            );
+            Navigate(FormScreenPersonalinfo)
+        Size: =24
+        Text: ="New Departure"
+        Width: =280
+        X: =165
+        Y: =936
+        ZIndex: =4
+
+    lblUserWelcome As label:
+        Height: =76
+        Size: =21
+        Text: ="Hello " & varUser
+        Width: =402
+        X: =238
+        Y: =117
+        ZIndex: =6
+
+    cmpHeader_1 As cmpHeader:
+        HeaderText: ="Home"
+        ZIndex: =7
+
+    cmpFooter_1 As cmpFooter:
+        Y: =1056
+        ZIndex: =8
+
+    IcoHamburger As icon.Add:
+        Color: =RGBA(250, 250, 250, 1)
+        Icon: =Icon.Hamburger
+        OnSelect: =Set(menuOpen, !menuOpen)
+        X: =559
+        Y: =8
+        ZIndex: =9
+
+    topRightMenu_1 As topRightMenu:
+        expanded: =menuOpen
+        Height: =If(topRightMenu_1.expanded,App.Height, 8)
+        menuItems: =Colnav
+        Width: =If(topRightMenu_1.expanded,App.Width/2,10)
+        X: =App.Width/2
+        Y: =71
+        ZIndex: =10
+

@@ -1,0 +1,35 @@
+{
+  "1f29f7a3-ed42-408b-8b9c-2046cf811164": {
+    "connectionInstanceId": "/providers/microsoft.powerapps/apis/shared_sharepointonline/connections/97fa91c36d6f49c79e1eb64df14f8c72",
+    "connectionParameters": {
+      "sku": "Enterprise"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "SharePoint",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1518/1.0.1518.2564/sharepointonline/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_sharepointonline",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {
+      "https://belgianrail.sharepoint.com/sites/B-TR321": {
+        "dataSources": {
+          "SEC_Car_List": {
+            "tableName": "659e993f-f6ea-477d-939e-735968a11901"
+          },
+          "SEC_Car_Rapports": {
+            "tableName": "0a5ae504-9c71-4921-b66b-656177bf092c"
+          }
+        }
+      }
+    },
+    "dataSources": [
+      "SEC_Car_List",
+      "SEC_Car_Rapports"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "1f29f7a3-ed42-408b-8b9c-2046cf811164"
+  }
+}

@@ -1,0 +1,8 @@
+cmpFooter As CanvasComponent:
+    Fill: =RGBA(37, 51, 108, 1)
+    Height: =80
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+

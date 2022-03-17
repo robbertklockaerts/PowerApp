@@ -1,0 +1,51 @@
+topRightMenu As CanvasComponent:
+    expanded: =true
+    Fill: =RGBA(37, 51, 108, 1)
+    Height: =965
+    menuItems: |-
+        =Table({TextFR: "Home", TextNL: "Home", screen: App.ActiveScreen})
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    "Gallery3 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+        Height: =915
+        Items: =topRightMenu.menuItems
+        Layout: =Layout.Vertical
+        OnSelect: =Navigate(ThisItem.screen)
+        TemplatePadding: =0
+        TemplateSize: =120
+        Width: =Max(App.Width, App.MinScreenWidth)/2
+        Y: =9
+        ZIndex: =1
+
+        Title3 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Font: =Font.Arial
+            Height: =120
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =0
+            Text: =If(Or(Language()="fr",Language()="fr-FR"),ThisItem.TextFR,ThisItem.TextNL)
+            Width: =320
+            ZIndex: =1
+
+        Separator3 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            ZIndex: =3
+
+        Separator3_1 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =4
+

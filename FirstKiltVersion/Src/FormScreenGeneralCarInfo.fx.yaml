@@ -1,0 +1,186 @@
+FormScreenGeneralCarInfo As screen:
+    Fill: =RGBA(239, 244, 249, 1)
+
+    Icon2 As icon.NextArrow:
+        Icon: =Icon.NextArrow
+        OnSelect: =Navigate(FormScreenVehicleStart)
+        X: =326
+        Y: =1056
+        ZIndex: =3
+
+    Icon3 As icon.BackArrow:
+        Icon: =Icon.BackArrow
+        OnSelect: =Back()
+        X: =219
+        Y: =1056
+        ZIndex: =4
+
+    FormHeader_2 As FormHeader:
+        PageTitle: ="Vehicle Info"
+        ZIndex: =5
+
+    Icon9 As icon.Add:
+        Color: =RGBA(250, 250, 250, 1)
+        Height: =60
+        Icon: =Icon.Home
+        OnSelect: =Navigate(HomeScreen)
+        Width: =60
+        X: =568
+        Y: =12
+        ZIndex: =6
+
+    Form2 As form:
+        DataSource: |
+            =SEC_Car_Rapports
+        DefaultMode: =varFormMode
+        Height: =672
+        Item: =varFormData
+        Width: =640
+        Y: =142
+        ZIndex: =7
+
+        CLEANESS_RAPPORT_DataCard3 As typedDataCard.textualEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CLEANESS_RAPPORT"
+            Default: =ThisItem.CLEANESS_RAPPORT
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="CLEANESS_RAPPORT"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            MaxLength: =DataSourceInfo([@SEC_Car_Rapports], DataSourceInfo.MaxLength, "CLEANESS_RAPPORT")
+            Required: =false
+            Update: =DataCardValue47.Text
+            Width: =640
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+            DataCardKey51 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue47 As text:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                Default: =Parent.Default
+                DelayOutput: =true
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                MaxLength: =Parent.MaxLength
+                PaddingLeft: =5
+                RadiusBottomLeft: =0
+                RadiusBottomRight: =0
+                RadiusTopLeft: =0
+                RadiusTopRight: =0
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey51.Y + DataCardKey51.Height + 5
+                ZIndex: =2
+
+            ErrorMessage51 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue47.Y + DataCardValue47.Height
+                ZIndex: =3
+
+            StarVisible51 As label:
+                Align: =Align.Center
+                Height: =DataCardKey51.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey51.Y
+                ZIndex: =4
+
+        CAR_CLEAN_DataCard1 As typedDataCard.comboBoxEditCard:
+            BorderStyle: =BorderStyle.Solid
+            DataField: ="CAR_CLEAN"
+            Default: =ThisItem.CAR_CLEAN
+            DisplayMode: =Parent.DisplayMode
+            DisplayName: ="CAR_CLEAN"
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =50
+            Required: =false
+            Update: =DataCardValue3.Selected
+            Width: =640
+            X: =0
+            Y: =1
+            ZIndex: =1
+
+            DataCardKey4 As label:
+                AutoHeight: =true
+                Height: =48
+                Size: =21
+                Text: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                Wrap: =false
+                X: =30
+                Y: =10
+                ZIndex: =1
+
+            DataCardValue3 As combobox:
+                BorderColor: =If(IsBlank(Parent.Error), Parent.BorderColor, Color.Red)
+                DefaultSelectedItems: =Parent.Default
+                DisplayFields: =["Value"]
+                DisplayMode: =Parent.DisplayMode
+                Height: =70
+                IsSearchable: =false
+                Items: =Choices([@SEC_Car_Rapports].CAR_CLEAN)
+                PaddingLeft: =If(Self.DisplayMode = DisplayMode.Edit, 5, 0)
+                SearchFields: =["Value"]
+                SearchItems: =[]
+                SelectMultiple: =false
+                Size: =21
+                Tooltip: =Parent.DisplayName
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardKey4.Y + DataCardKey4.Height + 5
+                ZIndex: =2
+
+            ErrorMessage4 As label:
+                AutoHeight: =true
+                Height: =10
+                Live: =Live.Assertive
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =24
+                Text: =Parent.Error
+                Visible: =Parent.DisplayMode=DisplayMode.Edit
+                Width: =Parent.Width - 60
+                X: =30
+                Y: =DataCardValue3.Y + DataCardValue3.Height
+                ZIndex: =3
+
+            StarVisible4 As label:
+                Align: =Align.Center
+                Height: =DataCardKey4.Height
+                Size: =21
+                Text: ="*"
+                Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                Width: =30
+                Wrap: =false
+                Y: =DataCardKey4.Y
+                ZIndex: =4
+
