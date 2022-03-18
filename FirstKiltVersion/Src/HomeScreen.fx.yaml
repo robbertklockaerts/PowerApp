@@ -4,10 +4,10 @@ HomeScreen As screen:
     button2 As button:
         Fill: =Red
         Height: =70 
+        Text: ="My button"
         Width: =280
         X: =165
         Y: =814
-        Text: ="My button"
 
     imgNameLogo As image:
         Height: =150
