@@ -7,6 +7,7 @@ HomeScreen As screen:
         Width: =280
         X: =165
         Y: =814
+        Text: ="My button"
 
     imgNameLogo As image:
         Height: =150
