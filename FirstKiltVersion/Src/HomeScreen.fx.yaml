@@ -1,6 +1,13 @@
 HomeScreen As screen:
     Fill: =RGBA(239, 244, 249, 1)
 
+    button2 As button:
+        Fill: =Red
+        Height: =70 
+        Width: =280
+        X: =165
+        Y: =814
+
     imgNameLogo As image:
         Height: =150
         Image: =kiltLogoBgTransp
@@ -273,9 +280,3 @@ HomeScreen As screen:
         Y: =71
         ZIndex: =10
 
-    button2 As button:
-        X: =165
-        Y: =1030
-        Width: =280
-        Height: =70 
-        Fill: =Red
