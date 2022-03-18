@@ -2,7 +2,7 @@ HomeScreen As screen:
     Fill: =RGBA(239, 244, 249, 1)
 
     button2 As button:
-        Fill: =Red
+        Fill: =Green
         Height: =70 
         Text: ="My button"
         Width: =280
